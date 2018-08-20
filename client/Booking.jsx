@@ -116,28 +116,28 @@ var Booking = /** @class */ (function (_super) {
         return (<div id="booking">
         <span>Arrival</span>
         <div id="start">
-          <select id="month-start" onChange={this.handleSelectChange}>
+          <select className="safari_only" id="month-start" onChange={this.handleSelectChange}>
             {months.map(function (month, index) { return (<option key={month.toLowerCase()} value={index + 1}>{month}</option>); })}
           </select>
-          <select id="day-start" onChange={this.handleSelectChange}>
+          <select className="safari_only" id="day-start" onChange={this.handleSelectChange}>
             {days.map(function (day, index) { return (<option key={day.toString()} value={index + 1}>{day}</option>); })}
           </select>
-          <select id="year-start" onChange={this.handleSelectChange}>
+          <select className="safari_only" id="year-start" onChange={this.handleSelectChange}>
             {years.map(function (year, index) { return (<option key={year.toString()} value={year.toString()}>{year}</option>); })}
           </select>
-          <select id="persons" onChange={this.handleSelectChange}>
+          <select className="safari_only" id="persons" onChange={this.handleSelectChange}>
             {persons.map(function (person) { return (<option key={person.toString()} value={person.toString()}>{person}</option>); })}
           </select>
         </div>
         <span>Departure</span>
         <div id="end">
-          <select id="month-end" onChange={this.handleSelectChange}>
+          <select className="safari_only" id="month-end" onChange={this.handleSelectChange}>
             {months.map(function (month, index) { return (<option key={month.toLowerCase()} value={index + 1}>{month}</option>); })}
           </select>
-          <select id="day-end" onChange={this.handleSelectChange}>
+          <select className="safari_only" id="day-end" onChange={this.handleSelectChange}>
             {days.map(function (day, index) { return (<option key={day.toString()} value={index + 1}>{day}</option>); })}
           </select>
-          <select id="year-end" onChange={this.handleSelectChange}>
+          <select className="safari_only" id="year-end" onChange={this.handleSelectChange}>
             {years.map(function (year) { return (<option key={year.toString()} value={year.toString()}>{year}</option>); })}
           </select>
         </div>

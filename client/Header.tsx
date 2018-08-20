@@ -16,13 +16,14 @@ export default class Header extends React.Component<any, HeaderState> {
       account: false,
       bookings: false,
       search: false,
-      searchstring: ''
+      searchstring: 'Search'
     }
     this.handleMouseOver = this.handleMouseOver.bind(this)
     this.handleMouseLeave = this.handleMouseLeave.bind(this)
+    this.handleChange = this.handleChange.bind(this)
   }
-  handleChange() {
-
+  handleChange(e) {
+    this.setState({searchstring: e.target.value})
   }
   handleMouseOver() {
     this.setState({account: true})
@@ -46,7 +47,7 @@ export default class Header extends React.Component<any, HeaderState> {
             <li>
               <div id="search">
                 <img src="search.svg" width="20px" height="20px" />
-                <input onChange={this.handleChange} type="text" value={this.state.searchstring || "Search"}>
+                <input onChange={this.handleChange} type="text" placeholder="City, State, or ZIP Code" value={this.state.searchstring}>
                 </input>
               </div>
             </li>

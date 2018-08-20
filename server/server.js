@@ -2,9 +2,11 @@ var express = require('express');
 var path = require('path');
 var parser = require('body-parser');
 var externals = require('./request-handler');
+var cors = require('cors');
 var app = express();
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(parser.json());
+app.use(cors());
 app.get('/rooms_available/:date/:nights', function (req, res) {
     console.log("Recevied request type GET for available rooms", req.params.date, req.params.nights, typeof req.params.date, typeof req.params.nights);
     var date = req.params.date;

@@ -20,13 +20,15 @@ var Header = /** @class */ (function (_super) {
             account: false,
             bookings: false,
             search: false,
-            searchstring: ''
+            searchstring: 'Search'
         };
         _this.handleMouseOver = _this.handleMouseOver.bind(_this);
         _this.handleMouseLeave = _this.handleMouseLeave.bind(_this);
+        _this.handleChange = _this.handleChange.bind(_this);
         return _this;
     }
-    Header.prototype.handleChange = function () {
+    Header.prototype.handleChange = function (e) {
+        this.setState({ searchstring: e.target.value });
     };
     Header.prototype.handleMouseOver = function () {
         this.setState({ account: true });
@@ -47,7 +49,7 @@ var Header = /** @class */ (function (_super) {
             <li>
               <div id="search">
                 <img src="search.svg" width="20px" height="20px"/>
-                <input onChange={this.handleChange} type="text" value={this.state.searchstring || "Search"}>
+                <input onChange={this.handleChange} type="text" placeholder="City, State, or ZIP Code" value={this.state.searchstring}>
                 </input>
               </div>
             </li>

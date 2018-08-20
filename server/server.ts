@@ -5,10 +5,12 @@ const express = require('express')
 const path = require('path')
 const parser = require('body-parser')
 const externals = require('./request-handler')
+const cors = require('cors')
 
 const app: {use: Function; listen: Function; get: Function; post: Function} = express()
 app.use(express.static(path.join(__dirname, '../public')))
 app.use(parser.json())
+app.use(cors())
 app.get('/rooms_available/:date/:nights', (req: any, res: any): void => {
   console.log("Recevied request type GET for available rooms", req.params.date, req.params.nights, typeof req.params.date, typeof req.params.nights)
   let date: string = req.params.date

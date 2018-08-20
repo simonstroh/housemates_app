@@ -218,8 +218,24 @@ a {
   transition: 0.4s;
   outline: none;
 }
+#search input[type=text]::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+#search input[type=text]::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+#search input[type=text]::-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+#search input[type=text]:-moz-input-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
 #search input[type=text]:focus {
   width: 300px;
+}
+
+.safari_only {
+  /* -webkit-appearance: none; */
 }
 
 #login > input[type=text], #login > input[type=password] {
