@@ -74,7 +74,7 @@ export default class Booking extends React.Component<BookingInterface, BookingSt
       let month: any = newDate.getMonth() + 1
       let year: any = newDate.getFullYear()
       let formattedDate: string = month + '-' + day + '-' + year
-      fetch(`http://localhost:2004/rooms_available/${formattedDate}/${diffDays - result.total_nights}`)
+      fetch(`http://138.197.208.221:2004/rooms-available/${formattedDate}/${diffDays - result.total_nights}`)
         .then((res: any): void => res.json()
           .then((body: any): void => {
             if (body.length > 0) {
@@ -92,7 +92,7 @@ export default class Booking extends React.Component<BookingInterface, BookingSt
     const startDate: string = `${this.state.startMonth}-${this.state.startDay}-${this.state.startYear}`
     const endDate: string = `${this.state.endMonth}-${this.state.endDay}-${this.state.endYear}`
     let diffDays: number = this.startEndDaysDifference()
-    fetch(`http://localhost:2004/rooms_available/${startDate}/${diffDays}`)
+    fetch(`http://138.197.208.221:2004/rooms-available/${startDate}/${diffDays}`)
       .then((res: any): void => {
         res.json()
         .then((body: any) => {

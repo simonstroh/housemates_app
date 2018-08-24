@@ -4,7 +4,7 @@ declare var require: any
 const {oneHundredRooms, bookingRooms, insertUser, insertRoom} = require('../db/models.js')
 
 const externals: object = {
-  '/rooms_available': (res: any, body: object): void => {
+  '/rooms-available': (res: any, body: object): void => {
     if (!body) {
       let rooms: any = oneHundredRooms()
       res.send(rooms)
@@ -19,7 +19,7 @@ const externals: object = {
     let user: User = req.body
     insertUser(user)
   },
-  '/rooms_available/post': (req: any): void => {
+  '/rooms-available/post': (req: any): void => {
     let room: Room = req.body
     insertRoom(room)
   }
